@@ -16,5 +16,5 @@ RUN    apk update && \
     /usr/bin/npm install --production
 
 EXPOSE 2368
-WORKDIR /var/www/ghost
+WORKDIR /var/www
 CMD /usr/bin/npm start --production
