@@ -1,10 +1,10 @@
 FROM alpine
 
 MAINTAINER Chen Augus <tianhao.chen@gmail.com>
-
+# https://github.com/TryGhost/Ghost/releases/download/0.11.6/Ghost-0.11.6.zip
 RUN apk update && \
     apk add nodejs-lts libgcc ca-certificates openssl && \
-    wget -c -O /tmp/ghost.zip https://github.com/TryGhost/Ghost/releases/download/0.11.6/Ghost-0.11.6.zip && \
+    wget -c -O /tmp/ghost.zip https://ghost.org/zip/ghost-latest.zip && \
     mkdir -p /var/www && \
     cd /var/www && \
     unzip /tmp/ghost.zip && \
