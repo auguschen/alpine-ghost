@@ -1,7 +1,13 @@
 FROM alpine
 
 MAINTAINER Chen Augus <tianhao.chen@gmail.com>
-# https://github.com/TryGhost/Ghost/releases/download/0.11.6/Ghost-0.11.6.zip
+
+# install nodejs from apline package manager
+# get latest relase from ghost.org
+# unzip to /var/www
+# install with production profile
+# install qiniu plugin
+
 RUN apk update && \
     apk add nodejs-lts libgcc ca-certificates openssl && \
     wget -c -O /tmp/ghost.zip https://ghost.org/zip/ghost-latest.zip && \
@@ -11,8 +17,10 @@ RUN apk update && \
     cp config.example.js config.js && \
     rm /tmp/ghost.zip && \
     /usr/bin/npm install --production && \
-    /usr/bin/npm install qiniu 
+    /usr/bin/npm install qiniu
 
 EXPOSE 2368
+
 WORKDIR /var/www
+
 CMD /usr/bin/npm start --production
