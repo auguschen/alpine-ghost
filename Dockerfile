@@ -10,8 +10,8 @@ RUN apk update && \
     unzip /tmp/ghost.zip && \
     cp config.example.js config.js && \
     rm /tmp/ghost.zip && \
-    /usr/bin/npm install --production && \
-    /usr/bin/npm install qiniu
+    /usr/bin/npm install qiniu && \
+    /usr/bin/npm install --production
 
 EXPOSE 2368
 WORKDIR /var/www
