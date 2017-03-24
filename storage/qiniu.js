@@ -76,4 +76,17 @@ QiniuStore.prototype.serve = function (){
     return express['static'](config.paths.imagesPath, {maxAge: utils.ONE_YEAR_MS});
 };
 
+// not really delete from Qiniu, may be implemented later
+QiniuStore.prototype.delete = function(fileName, targetDir) {
+  return new Promise(function(resolve, reject) {
+    resolve(true);
+  });
+};
+
+// don't know what's read, may be implemented later
+QiniuStore.prototype.read = function(fileName, targetDir) {
+  return new Promise(function(resolve, reject) {
+    resolve(true);
+  });
+};
 module.exports = QiniuStore;
