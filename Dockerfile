@@ -17,7 +17,10 @@ RUN apk update && \
     cp config.example.js config.js && \
     rm /tmp/ghost.zip && \
     /usr/bin/npm install --production && \
-    /usr/bin/npm install qiniu
+    /usr/bin/npm install qiniu && \
+    /usr/bin/npm install ghost-qn-store && \
+    mkdir -p content/storage && \
+    cp -r node_modules/ghost-qn-store content/storage/qn-store
 
 EXPOSE 2368
 
