@@ -16,6 +16,7 @@ RUN apk update && \
     unzip /tmp/ghost.zip && \
     cp config.example.js config.js && \
     rm /tmp/ghost.zip && \
+    /usr/bin/npm install pm2 -g && \
     /usr/bin/npm install --production && \
     /usr/bin/npm install qiniu && \
     /usr/bin/npm install ghost-qn-store && \
@@ -26,4 +27,6 @@ EXPOSE 2368
 
 WORKDIR /var/www
 
-CMD /usr/bin/npm start --production
+ENV NODE_ENV production
+
+CMD pm2 start index.js --name "ghost" --no-daemon
