@@ -9,7 +9,7 @@ MAINTAINER Chen Augus <tianhao.chen@gmail.com>
 # install qiniu plugin
 
 RUN apk update && \
-    apk add nodejs-lts libgcc ca-certificates openssl && \
+    apk add nodejs-lts nodejs-npm libgcc ca-certificates openssl && \
     wget -c -O /tmp/ghost.zip https://ghost.org/zip/ghost-latest.zip && \
     mkdir -p /var/www && \
     cd /var/www && \
