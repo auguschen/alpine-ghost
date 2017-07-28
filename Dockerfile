@@ -14,7 +14,6 @@ RUN apk update && \
     mkdir -p /var/www && \
     cd /var/www && \
     unzip /tmp/ghost.zip && \
-    cp config.example.js config.js && \
     rm /tmp/ghost.zip && \
     /usr/bin/npm install pm2 -g && \
     /usr/bin/npm install --production && \
