@@ -17,12 +17,8 @@ RUN apk update && \
     rm /tmp/ghost.zip && \
     /usr/bin/npm install -g knex-migrator && \
     /usr/bin/npm install pm2 -g && \
-    /usr/bin/npm install --development && \
-    /usr/bin/npm install qiniu && \
-    /usr/bin/npm install ghost-qn-store && \
-    mkdir -p content/storage && \
-    cp -r node_modules/ghost-qn-store content/storage/qn-store
-
+    /usr/bin/npm install --development
+    
 EXPOSE 2368
 
 WORKDIR /var/www
