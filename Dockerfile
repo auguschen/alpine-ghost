@@ -5,8 +5,7 @@ MAINTAINER Chen Augus <tianhao.chen@gmail.com>
 # install nodejs from apline package manager
 # get latest relase from ghost.org
 # unzip to /var/www
-# install with production profile
-# install qiniu plugin
+# install with development profile
 
 RUN apk update && \
     apk add nodejs-lts nodejs-npm libgcc ca-certificates openssl && \
@@ -17,7 +16,8 @@ RUN apk update && \
     rm /tmp/ghost.zip && \
     /usr/bin/npm install -g knex-migrator && \
     /usr/bin/npm install pm2 -g && \
-    /usr/bin/npm install --development
+    /usr/bin/npm install --development && \
+    knex-migrator init
     
 EXPOSE 2368
 
