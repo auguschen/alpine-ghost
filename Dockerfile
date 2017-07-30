@@ -14,7 +14,6 @@ RUN apk update && \
     cd /var/www && \
     unzip /tmp/ghost.zip && \
     rm /tmp/ghost.zip && \
-    /usr/bin/npm install -g knex-migrator && \
     /usr/bin/npm install pm2 -g && \
     /usr/bin/npm install --development && \
     knex-migrator init
