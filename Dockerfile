@@ -10,7 +10,7 @@ MAINTAINER Chen Augus <tianhao.chen@gmail.com>
 
 RUN apk update && \
     apk add nodejs-lts nodejs-npm libgcc ca-certificates openssl && \
-    wget -c -O /tmp/ghost.zip https://ghost.org/zip/ghost-latest.zip && \
+    wget -c -O /tmp/ghost.zip https://github.com/TryGhost/Ghost/releases/download/0.11.11/Ghost-0.11.11.zip && \
     mkdir -p /var/www && \
     cd /var/www && \
     unzip /tmp/ghost.zip && \
